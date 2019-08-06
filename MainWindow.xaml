@@ -15,6 +15,8 @@
 
         <Controls:ToggleSwitch IsChecked="{Binding P2, Mode=OneWay, diag:PresentationTraceSources.TraceLevel=High}"
                                CheckedCommand="{Binding SetT2}"
+                               Checked="ToggleSwitch_Checked"
+                               Unchecked="ToggleSwitch_Checked"
                                UnCheckedCommand="{Binding ClearT2}"/>
         <Controls:ToggleSwitchButton IsChecked="{Binding P2, Mode=OneWay}"
                                      Command="{Binding ToggleT2}"/>
