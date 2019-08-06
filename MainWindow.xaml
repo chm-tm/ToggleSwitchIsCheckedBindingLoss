@@ -1,0 +1,22 @@
+﻿<Window x:Class="ToggleSwitchIsCheckedBindingLoss.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        xmlns:local="clr-namespace:ToggleSwitchIsCheckedBindingLoss"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <Controls:ToggleSwitch IsChecked="{Binding P1, Mode=OneWay}"
+                               CheckedCommand="{Binding SetT1}"
+                               UnCheckedCommand="{Binding ClearT1}"/>
+
+        <Controls:ToggleSwitch IsChecked="{Binding P2, Mode=OneWay, diag:PresentationTraceSources.TraceLevel=High}"
+                               CheckedCommand="{Binding SetT2}"
+                               UnCheckedCommand="{Binding ClearT2}"/>
+        <Controls:ToggleSwitchButton IsChecked="{Binding P2, Mode=OneWay}"
+                                     Command="{Binding ToggleT2}"/>
+    </StackPanel>
+</Window>
